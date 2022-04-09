@@ -1,10 +1,21 @@
 <template>
+  <h1>Wine Sherpa</h1>
   <ais-instant-search index-name="wine_records" :search-client="searchClient">
+    <h2>Type</h2>
+    <ais-refinement-list attribute="type"/>
+    <h2>Domain</h2>
+    <ais-refinement-list attribute="domain"/> 
+    <h2>Year</h2>
+    <ais-refinement-list attribute="year"/> 
     <ais-search-box />
     <ais-configure :hitsPerPage="5" />
     <ais-hits>
       <template v-slot:item="{ item }">
-        <h2>{{item.name}}</h2>
+        <h3>{{item.name}}</h3>
+        <h4>{{item.domain}}</h4>
+        <p>{{item.year}}</p>
+        <img :src="item.image" :alt="item.name">
+        <p>${{item.price}}</p>
       </template>
     </ais-hits>
   </ais-instant-search>
