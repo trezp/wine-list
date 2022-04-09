@@ -1,17 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ais-instant-search index-name="wine_records" :search-client="searchClient">
+    <ais-search-box />
+    <ais-configure :hitsPerPage="5" />
+    <ais-hits>
+      <template v-slot:item="{ item }">
+        <h2>{{item.name}}</h2>
+      </template>
+    </ais-hits>
+  </ais-instant-search>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import algoliasearch from 'algoliasearch/lite';
+import 'instantsearch.css/themes/satellite-min.css';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      searchClient: algoliasearch(
+        'BRNPZODEPO',
+        '7a4b8c7ac1f5b076e1c4f82e6caf6764'
+      )
+    };
+  },
+};
 </script>
 
 <style>
