@@ -36,8 +36,8 @@ export default {
   data() {
     return {
       searchClient: algoliasearch(
-        'BRNPZODEPO',
-        '7a4b8c7ac1f5b076e1c4f82e6caf6764'
+        process.env.VUE_APP_INDEX_ID,
+        process.env.VUE_APP_ALGOLIA_API_KEY
       )
     };
   },
