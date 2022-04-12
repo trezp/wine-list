@@ -1,20 +1,41 @@
 <template>
   <header>
-    <h1>Find A Wine</h1>
+    <h1>Wine Sherpa</h1>
   </header>
   <ais-instant-search index-name="wine_records" :search-client="searchClient" class="container">
     <aside class="sidebar">
       <h2>Type</h2>
       <ais-refinement-list attribute="type"/>
+      <h2>Price</h2>
+      <ais-numeric-menu
+        attribute="price"
+        :items="[
+          { label: 'All' },
+          { label: '$10 - $20', start: 10, end: 20 },
+          { label: '$20 - $50', start: 20, end: 50 },
+          { label: '$50 - $100', start: 50, end: 100 },
+          { label: '$100 - $500', start: 100, end: 500 },
+          { label: '> $500', start: 500 },
+        ]"
+      />
       <h2>Origin</h2>
       <ais-refinement-list attribute="domain"/> 
       <h2>Year</h2>
-      <ais-refinement-list attribute="year"/> 
+      <ais-refinement-list attribute="year"/>
       <ais-configure :hitsPerPage="9" />
     </aside>
     <main>
-      <ais-search-box />
-      <ais-hits class="wine-results">
+      <div class="search-and-sort">
+        <ais-search-box placeholder="Search wines..." />
+        <ais-sort-by id="ais-sort-by"
+          :items="[
+            { value: 'wine_records', label: 'Sort by Quality' },
+            { value: 'wine_asc', label: 'Price low to high' },
+            { value: 'wine_desc', label: 'Price high to low' },
+          ]"
+        />
+      </div>
+      <ais-infinite-hits class="wine-results">
         <template v-slot:item="{ item }">
           <div class="wine-details">
             <img :src="item.image" :alt="item.name">
@@ -23,7 +44,12 @@
             <p>${{item.price}}</p>
           </div>
         </template>
-      </ais-hits>
+      </ais-infinite-hits>
+      <ais-state-results>
+        <template v-slot="{ state: { query }, results: { hits } }">
+          <p v-show="!hits.length">No results found. <q>{{ query }}</q></p>
+        </template>
+      </ais-state-results>
     </main>
   </ais-instant-search>
 </template>
@@ -55,31 +81,43 @@ export default {
 }
 
 .container {
-  width: 90%;
+  max-width: 1920px;
+  width: 95%;
   margin: auto;
   display: grid;
   grid-template-areas: 
-    "header header header header header"
-    "aside aside main main main";
+    "header header header"
+    "aside main main";
+  grid-template-columns: 25% 75%;
 }
 
 .sidebar {
   padding: 0 2em;
   width: 100%;
+  text-align: left;
+}
+
+.sidebar h2:first-child {
+  margin-top: 0;
+}
+
+.search-and-sort {
+  display: flex;
+  justify-content: space-between;
 }
 
 .ais-SearchBox {
-  width: 95%;
+  width: 75%;
 }
 
-.ais-Hits-list {
+.ais-InfiniteHits-list {
   display: flex;
   gap: 10px;
   margin-top: 10px;
   flex-wrap: wrap;
 
   li {
-    flex-basis: calc((100% / 3) - 2em);
+    flex-basis: calc((100% / 3) - .5em);
     justify-content: center;
 
     &:hover {
