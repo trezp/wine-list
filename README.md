@@ -12,7 +12,8 @@ This search experience offers the following features:
 
 If I had more time to work with this demo, I would have liked to do the following: 
 - Personalize the styling of the demo a little more. However, as that would largely depend upon the client's branding, I focused on building a clean, simple and intuitive interface, placing the search bar and filters where they tend to be placed in other retail search/sort/filter experiences (eg Best Buy, Amazon), with the filtering options as a left sidebar and search/sort along the top 
-- Add the ability to sort by featured wines, to help narrow the inventory for curious buyers   
+- Add the ability to sort by featured wines, to help narrow the inventory for curious buyers  
+- Further CSS tweaks to ensure that the demo was fully responsive  
 
 ## Project setup
 ```
