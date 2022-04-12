@@ -72,12 +72,17 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: 'Open Sans',Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+header {
+ margin: 60px 0;
+ font-family: 'Poiret One', Helvetica, Arial, sans-serif;
+ font-size: 2em;
 }
 
 .container {
