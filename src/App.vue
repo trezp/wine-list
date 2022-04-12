@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Wine Sherpa</h1>
+    <h1>The Wine Club</h1>
   </header>
   <ais-instant-search index-name="wine_records" :search-client="searchClient" class="container">
     <aside class="sidebar">
@@ -18,7 +18,7 @@
           { label: '> $500', start: 500 },
         ]"
       />
-      <h2>Origin</h2>
+      <h2>Region</h2>
       <ais-refinement-list attribute="domain"/> 
       <h2>Year</h2>
       <ais-refinement-list attribute="year"/>
@@ -29,7 +29,7 @@
         <ais-search-box placeholder="Search wines..." />
         <ais-sort-by id="ais-sort-by"
           :items="[
-            { value: 'wine_records', label: 'Sort by Quality' },
+            { value: 'wine_records', label: 'Highest quality, lowest price' },
             { value: 'wine_asc', label: 'Price low to high' },
             { value: 'wine_desc', label: 'Price high to low' },
           ]"
@@ -102,17 +102,17 @@ header {
   text-align: left;
 }
 
-.sidebar h2:first-child {
+h2:first-child {
   margin-top: 0;
 }
 
 .search-and-sort {
   display: flex;
   justify-content: space-between;
-}
 
-.ais-SearchBox {
-  width: 75%;
+  .ais-SearchBox {
+    width: 70%;
+  }
 }
 
 .ais-InfiniteHits-list {
