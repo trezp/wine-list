@@ -21,5 +21,5 @@ git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:trezp/wine-list.git main:gh-pages
-gh-pages -d dist
+# gh-pages -d dist
 cd - 
