@@ -1,6 +1,6 @@
 # The Wine Club
 
-Welcome to the Wine Club! My goal was to create an experience to serve both wine connoisseurs who know what they're look for and novices who may need help finding the highest quality wine at their price point. This demo seeks to anticipate what is most important to the wine buyer: What's the best wine I can get in my price range? What type of wine is it? Where is it from? What year is its vintage? 
+Welcome to the Wine Club! My goal was to create an experience to serve both wine connoisseurs who know what they're looking for and novices who may need help finding the highest quality wine at their price point. This demo seeks to anticipate what is most important to the wine buyer: What's the best wine I can get in my price range? What type of wine is it? Where is it from? What year is its vintage? 
 
 This search experience offers the following features: 
 
