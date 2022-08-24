@@ -10,11 +10,6 @@ This search experience offers the following features:
 - Additionally, two dataset replicas allow the user to sort by price low to high, or price high to low 
 - Choosing a wine can be overwhelming. Infinite results display nine wines by default, but user can opt to look at more
 
-If I had more time to work with this demo, I would have liked to do the following: 
-- Personalize the styling of the demo a little more. As that would largely depend upon the client's branding, I focused on building a clean, simple and intuitive interface, placing the search bar and filters where they tend to be placed in other retail search/sort/filter experiences (eg Best Buy, Amazon), with the filtering options as a left sidebar and search/sort along the top 
-- Add the ability to sort by featured wines, to help narrow the inventory for curious buyers  
-- Further CSS tweaks to ensure that the demo is fully responsive  
-
 ## Project setup
 ```
 npm install
